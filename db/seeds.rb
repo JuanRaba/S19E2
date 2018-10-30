@@ -6,9 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Task.destroy_all
 9.times do|i|
   Task.create(
     name: Faker::VForVendetta.quote,
-    photo: "http://lorempixel.com/200/200/technics/#{i + 1}"
+    photo: "https://picsum.photos/200/200/?image=#{i+1}"
     )
 end
