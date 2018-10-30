@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+9.times do|i|
+  Task.create(
+    name: Faker::VForVendetta.quote,
+    photo: "http://lorempixel.com/200/200/technics/#{i + 1}"
+    )
+end
