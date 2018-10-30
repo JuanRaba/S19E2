@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'dones/create'
   resources :tasks, only: :index do
     resources :dones, only: :create
   end
