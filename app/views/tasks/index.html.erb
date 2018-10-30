@@ -10,7 +10,7 @@
             <%= image_tag task.photo, class: 'card-img-top' %>
             <div class="body">
               <p><%= task.name %></p>
-              <%= link_to "Comprar", class: 'btn btn-primary'%>
+              <%= link_to "Comprar", task_dones_path(task), class: 'btn btn-primary', method: :post%>
             </div>
           </div>
         </div>
