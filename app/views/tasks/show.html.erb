@@ -1,0 +1,19 @@
+<h1>Task#show</h1>
+<p>Find me in app/views/tasks/show.html.erb</p>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="card">
+          <p><%= link_to @task.name, task_path(@task) %></p>
+
+          <% if @task.check_done(current_user)%>
+            <%= link_to "Descompletar", task_done_path(@task, current_user), class: 'btn btn-warning', method: :delete%>
+          <% else %>
+            <%= link_to "Completar", task_dones_path(@task), class: 'btn btn-primary', method: :post%>
+          <% end %>
+          <%= image_tag @task.photo, class: 'card-img-bottom' %>
+      </div>
+    </div>
+  </div>
+</div>
