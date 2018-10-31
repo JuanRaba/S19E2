@@ -1,6 +1,44 @@
 <h1>Task#show</h1>
 <p>Find me in app/views/tasks/show.html.erb</p>
 
+
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <% @users.each do |user| %>
+      <tr>
+        <td>
+          <%= user.email %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Fast User Email</th>
+        <th>Fast Done Date</th>
+      </tr>
+    </thead>
+    <% @fast_dones.each do |done| %>
+      <tr>
+        <td>
+          <%= done.user.email %>
+        </td>
+        <td>
+          <%= done.created_at %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</div>
 <div class="container">
   <div class="row">
     <div class="col">
