@@ -5,12 +5,16 @@
   <table class="table">
     <thead>
       <tr>
+        <th>Fast User Photo</th>
         <th>Fast User Email</th>
         <th>Fast Done Date</th>
       </tr>
     </thead>
     <% @fast_dones.each do |done| %>
       <tr>
+        <td>
+          <%= image_tag done.user.photo, class: 'fluid' if done.user.photo %>
+        </td>
         <td>
           <%= done.user.email %>
         </td>
