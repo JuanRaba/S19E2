@@ -6,7 +6,7 @@
     <thead>
       <tr>
         <th>Fast User Photo</th>
-        <th>Fast User Email</th>
+        <th>Fast User Name</th>
         <th>Fast Done Date</th>
       </tr>
     </thead>
@@ -16,7 +16,7 @@
           <%= image_tag done.user.photo, class: 'fluid' if done.user.photo %>
         </td>
         <td>
-          <%= done.user.email %>
+          <%= done.user.try(:name) %>
         </td>
         <td>
           <%= done.created_at %>
@@ -30,11 +30,15 @@
   <table class="table">
     <thead>
       <tr>
+        <th>Name</th>
         <th>Email from users that have completed the task</th>
       </tr>
     </thead>
     <% @users.each do |user| %>
       <tr>
+        <td>
+          <%= user.try(:name) %>
+        </td>
         <td>
           <%= user.email %>
         </td>
